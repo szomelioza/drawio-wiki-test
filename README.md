@@ -11,7 +11,7 @@ Create new diagram:
 6. If integration is installed select repo in which diagram will be saved.
 7. Create diagram and add commit message.
 8. Open GitHub Wiki and reference image using:
-`![<alternative_description>](../blob/<branch>/<file_name>?raw=true)`
+`![<alternative_description>](../blob/<branch>/<file_name>?raw=true)` or `[![<alternative_description>](../blob/<branch>/<file_name>?raw=true)](https://app.diagrams.net/#H<username/org>%2F<repo_name>%2F<branch>%2F<file_name>)`
 
 Edit existing diagram:
 1. Open draw.io.
