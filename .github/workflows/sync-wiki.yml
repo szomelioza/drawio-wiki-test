@@ -17,4 +17,4 @@ jobs:
         with:
           source: .wiki/docs
           destination: wiki
-          token: ${{ secrets.GITHUB_TOKEN}}
+          token: ${{ secrets.WIKI_SYNC_TOKEN }}
