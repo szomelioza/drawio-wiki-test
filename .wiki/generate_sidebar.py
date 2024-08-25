@@ -15,7 +15,8 @@ class Node:
 
 def get_all_md_files() -> list:
     """Return list of files with .md extension"""
-    return list(Path("docs").glob("*.md"))
+    script_dir = Path(__file__).parent.resolve()
+    return list(Path(f"{script_dir}/docs").glob("*.md"))
 
 def extract_metadata(path: Path) -> dict:
     """Get metadata of markdown file"""
