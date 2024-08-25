@@ -1,7 +1,7 @@
 ---
 title: Home
 parent: root
-priority: 1
+priority: 99
 ---
 
 This is homepage of documentation.

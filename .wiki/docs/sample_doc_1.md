@@ -1,5 +1,5 @@
 ---
-title: home
+title: Sample doc 1
 parent: root
 priority: 2
 ---
