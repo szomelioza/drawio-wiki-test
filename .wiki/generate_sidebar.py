@@ -55,11 +55,16 @@ def build_tree(files: list) -> Node:
 def generate_sidebar_content(node: Node, indent) -> str:
     """Recursively generate _Sidebar.md content"""
     sidebar_content = ""
+
     if node.path:
-        link = "https://dummylink.com"
-        sidebar_content += ' ' * indent + f"* [{node.title}]({link})\n"
+        filename = node.path.stem
+        link = f"https://github.com/szomelioza/drawio-wiki-test/wiki/{filename}"
+        if indent == 0:
+            sidebar_content += '  ' * indent + f"# [{node.title}]({link})\n"
+        else:
+            sidebar_content += '  ' * indent + f"* [{node.title}]({link})\n"
     elif node.title != "root":
-        sidebar_content += ' ' * indent + f"* [{node.title}]\n"
+        sidebar_content += ' ' * indent + f"# {node.title}\n"
     try:
         for child in sorted(node.children, key=lambda child: (-child.priority, child.title)):
             sidebar_content += generate_sidebar_content(child, indent + 1)
@@ -70,8 +75,9 @@ def generate_sidebar_content(node: Node, indent) -> str:
     return sidebar_content
 
 def save_sidebar(sidebar_content: str) -> None:
+    """Save content of _Sidebar.md"""
     wiki_dir = Path(__file__).parent.resolve()
-    with open(f"{wiki_dir}/docs/_sidebar.md", "w") as f:
+    with open(f"{wiki_dir}/docs/_Sidebar.md", "w") as f:
         f.write(sidebar_content)
 
 if __name__ == "__main__":
