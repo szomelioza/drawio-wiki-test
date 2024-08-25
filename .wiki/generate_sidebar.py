@@ -68,8 +68,13 @@ def generate_sidebar_content(node: Node, indent) -> str:
 
     return sidebar_content
 
+def save_sidebar(sidebar_content: str) -> None:
+    wiki_dir = Path(__file__).parent.resolve()
+    with open(f"{wiki_dir}/docs/_sidebar.md", "w") as f:
+        f.write(sidebar_content)
+
 if __name__ == "__main__":
     files = get_all_md_files()
     root = build_tree(files)
     sidebar_content = generate_sidebar_content(root, -1)
-    print(sidebar_content)
+    save_sidebar(sidebar_content)
