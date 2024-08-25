@@ -22,7 +22,7 @@ jobs:
         run: ls
       - name: Run sidebar generator
         run: |
-          python3 ./wiki/generate_sidebar.py
+          python3 .wiki/generate_sidebar.py
       - name: Debug 2
         run: ls
       - name: Push docs to wiki
